@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EqJ-2z-TtV">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055.6"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="wSv-yv-4td">
+            <objects>
+                <controller id="EqJ-2z-TtV" customClass="InterfaceController" customModule="HelloWatchKit_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Hello WatchKit" textAlignment="center" id="EMB-1W-kQd"/>
+                        <separator alignment="left" id="VAm-8T-A47"/>
+                        <button width="1" alignment="left" title="View Map" id="byX-uq-gXU">
+                            <connections>
+                                <segue destination="LRP-Li-FhU" kind="push" id="Vb8-FZ-ZDG"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Browse Features" id="EKk-Gp-myH">
+                            <connections>
+                                <action selector="browseButtonTapped" destination="EqJ-2z-TtV" id="gzu-lb-avN"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="See Minions" id="7hq-WH-vD5">
+                            <connections>
+                                <segue destination="PEG-cq-dt2" kind="push" id="mvj-sk-0eR"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="2" y="-28"/>
+        </scene>
+        <!--Map Interface Controller-->
+        <scene sceneID="VAv-6M-4Hy">
+            <objects>
+                <controller id="LRP-Li-FhU" customClass="MapInterfaceController" customModule="HelloWatchKit_WatchKit_Extension">
+                    <items>
+                        <map height="100" alignment="left" id="gvX-gV-YQE"/>
+                    </items>
+                    <connections>
+                        <outlet property="mapView" destination="gvX-gV-YQE" id="xdS-ez-JtP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="308" y="-40"/>
+        </scene>
+        <!--FeatureInterfaceController-->
+        <scene sceneID="20y-tV-b0v">
+            <objects>
+                <controller identifier="FeatureInterfaceController" id="rEy-Hc-cJ3" customClass="FeatureInterfaceController" customModule="HelloWatchKit_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Feature" textAlignment="center" id="Mdn-dH-eKG">
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="font" type="system" pointSize="26"/>
+                        </label>
+                        <imageView alignment="left" id="aKR-8a-xZb"/>
+                    </items>
+                    <connections>
+                        <outlet property="featureImage" destination="aKR-8a-xZb" id="TCn-8d-Wnp"/>
+                        <outlet property="featureLabel" destination="Mdn-dH-eKG" id="FSI-b3-axQ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="263" y="244"/>
+        </scene>
+        <!--Table Interface Controller-->
+        <scene sceneID="uiw-za-eHK">
+            <objects>
+                <controller id="PEG-cq-dt2" customClass="TableInterfaceController" customModule="HelloWatchKit_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="elG-uZ-Id1">
+                            <items>
+                                <tableRow identifier="MinionRowType" id="pxs-0O-ADo" customClass="MinionRowController" customModule="HelloWatchKit_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Z69-BU-WP1">
+                                        <items>
+                                            <imageView width="0.20000000000000001" height="1" alignment="left" contentMode="scaleAspectFill" id="51x-Ya-O0u"/>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="1ne-fZ-BTd"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="image" destination="51x-Ya-O0u" id="VBF-Zw-IRo"/>
+                                        <outlet property="minionNameLabel" destination="1ne-fZ-BTd" id="cQV-Mx-kkr"/>
+                                        <segue destination="Chr-Qn-Jvy" kind="push" id="ZdA-kY-TL0"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="elG-uZ-Id1" id="tQX-nd-rDV"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="115" y="552"/>
+        </scene>
+        <!--Minion Details Interface Controller-->
+        <scene sceneID="ybt-9c-Jhh">
+            <objects>
+                <controller id="Chr-Qn-Jvy" customClass="MinionDetailsInterfaceController" customModule="HelloWatchKit_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Label" id="ZQM-bK-Hi0"/>
+                        <imageView alignment="left" id="lRD-uc-gDU"/>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="lRD-uc-gDU" id="NDW-6N-LP6"/>
+                        <outlet property="nameLabel" destination="ZQM-bK-Hi0" id="RkB-ij-frF"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="354" y="558"/>
+        </scene>
+    </scenes>
+</document>
